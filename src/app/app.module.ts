@@ -10,6 +10,13 @@ import { AppsettingsComponent } from './components/appsettings/appsettings.compo
 
 import { SaltService} from './services/salt.service';
 import { SaltPipe } from './pipes/salt.pipe';
+import { LoginComponent } from './components/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: ''     ,component: AppComponent  , data: { title: 'Home' }},
+  { path: 'login',component: LoginComponent, data: { title: 'Login' }}
+];
 
 @NgModule({
   declarations: [
@@ -18,9 +25,13 @@ import { SaltPipe } from './pipes/salt.pipe';
     AppfooterComponent,
     AppmenuComponent,
     AppsettingsComponent,
-    SaltPipe
+    SaltPipe,
+    LoginComponent
   ],
   imports: [
+
+    RouterModule.forRoot(appRoutes),
+
     BrowserModule,
     HttpModule
   ],

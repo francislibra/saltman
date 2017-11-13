@@ -11,7 +11,7 @@ import {Minions} from './components/minions';
 export class AppComponent implements OnInit {
 
   public minionsArray: Minions[];
-
+  public counter = 0;
   constructor ( private saltService: SaltService) {
   }
 
